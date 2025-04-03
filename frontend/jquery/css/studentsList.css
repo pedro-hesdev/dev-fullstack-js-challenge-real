@@ -1,0 +1,30 @@
+
+.content-page .top-actions{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+
+.content-page .table-list{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    border-collapse: collapse;
+    border: solid 1px  #dee2e6;
+    border-radius: 0.5 rem;
+}
+
+.content-page .table-list thead{
+    height: 50px;
+    background-color:cornflowerblue;
+
+}
+
+.content-page .table-list tbody tr{
+    height: 40px;
+}
+
+.content-page .table-list tbody tr:nth-child(even){
+    background-color: #cccc;
+}

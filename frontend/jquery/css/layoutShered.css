@@ -3,6 +3,24 @@ body{
     margin: 0px
 }
 
+.btn{
+    background-color: #ccc;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.margin-left-10{
+    margin-left: 10px;
+
+}
+.margin-right-10{
+    margin-right: 10px;
+}
+
 .padding-lr-20{
     padding-left: 20px;
     padding-right: 20px;
@@ -63,34 +81,4 @@ body{
     align-items: center;
     font-size: 16px;
     font-weight: 600;
-}
-
-.content-page .top-actions{
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-between;
-}
-
-
-.content-page .table-list{
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-    border-collapse: collapse;
-    border: solid 1px  #dee2e6;
-    border-radius: 0.5 rem;
-}
-
-.content-page .table-list thead{
-    height: 50px;
-    background-color:cornflowerblue;
-
-}
-
-.content-page .table-list tbody tr{
-    height: 40px;
-}
-
-.content-page .table-list tbody tr:nth-child(even){
-    background-color: #cccc;
 }

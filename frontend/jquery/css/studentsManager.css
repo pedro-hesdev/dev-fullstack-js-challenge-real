@@ -1,0 +1,43 @@
+.form{
+max-width: 700px;
+
+
+}
+
+.form .form-group{
+    margin-top: 15px;
+    border: 2px solid #cccc;
+    height: 40px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.form .form-group label{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #dee2e6;;
+   
+    
+
+}
+
+.form .form-group input{
+    width: 100%;
+    border: 0px;
+    border-left: 1px solid #cccc;
+}
+
+/*init button */
+
+.form .actions{
+    margin-top: 20px;
+    text-align: right;
+    
+}
+
+
+
+
+/*Button ead*/
