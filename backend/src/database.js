@@ -2,28 +2,28 @@ module.exports = [
     {
         nome:'Pedro Henrique Eduardo',
         email:'pedro171220@gmail.com ',
-        cpf:'051.158.155-20',
+        cpf:'05115815520',
         ra:'5821852',   
     },
 
     {
         nome:'Maria',
         email:'maria1223@gmail.com',
-        cpf:'072.188.455-50',
+        cpf:'07218845550',
         ra:'587085562',   
     },
     
     {
         nome:'João',
         email:'joao@gmail.com',
-        cpf:'381.359.111-55',
+        cpf:'38135911155',
         ra:'12684775',   
     },
     
     {
-        nome:'Bruna',
-        email:'bruninha@gmail.com',
-        cpf:'121.289.555-35',
+        nome:'Helena',
+        email:'helena@gmail.com',
+        cpf:'12128955535',
         ra:'879218502',   
     },
 
