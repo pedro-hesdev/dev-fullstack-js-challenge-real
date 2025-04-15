@@ -1,5 +1,6 @@
 .form{
 max-width: 700px;
+padding-left: 20px;
 
 
 }
@@ -10,6 +11,7 @@ max-width: 700px;
     height: 40px;
     display: flex;
     border-radius: 5px;
+    
 }
 
 .form .form-group label{
@@ -32,8 +34,9 @@ max-width: 700px;
 /*init button */
 
 .form .actions{
+    display: flex;
+    justify-content: right;
     margin-top: 20px;
-    text-align: right;
     
 }
 
