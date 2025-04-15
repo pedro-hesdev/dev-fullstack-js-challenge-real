@@ -1,19 +1,17 @@
-const express = require('express');
-
+const express = require("express");
 var cors = require("cors");
-
 let database = require("./database");
 
 
-const app = express()
-
+const app = express();
 app.use(cors());
+app.use(express.json());    
 
 app.get('/', function(req, res) {
   res.send('Hello World')
 });
 
-app.get('/students/list' ,function(req, res) {
+app.get("/students/list" ,function(req, res) {
     setTimeout(function(){
 
         res.send(database);
@@ -30,6 +28,13 @@ app.get("/students/find/:ra", function(req, res) {
         res.send(studentFound);
     }, 2000);
    
+})
+
+app.post("/students/save", (req, res) => {
+    console.log(req.body);
+    res.send({ result: true, message: "Deu Bom" });
+
+
 })
 
 app.delete("/students/delete/:ra", (req, res)=>{
