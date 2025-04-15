@@ -31,8 +31,13 @@ app.get("/students/find/:ra", function(req, res) {
 })
 
 app.post("/students/save", (req, res) => {
-    console.log(req.body);
-    res.send({ result: true, message: "Deu Bom" });
+    database.push({
+        nome: req.body.name,
+        ra: req.body.ra,
+        email:req.body.email,
+        cpf:req.body.cpf,
+    });
+    res.send({ result: true, message: "Cadastro realizado com sucesso !" });
 
 
 })

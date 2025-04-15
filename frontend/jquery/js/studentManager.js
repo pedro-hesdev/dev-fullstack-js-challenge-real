@@ -15,29 +15,35 @@ $(document).ready(function(){
     }
 
 
-    // $("#studentForm").submit((event) =>{
-    //     console.log("texte");
-    //     event.proventDefault();
-    //     const body = {
-    //         name: $(this).find("#name").val(),
-    //         ra: $(this).find("#ra").val(),
-    //         cpf: $(this).find("#cpf").val(),
-    //         email: event.target.email.value,
-    //     };
+    $("#studentForm").submit((event) =>{
+        console.log("texte");
+        event.preventDefault();
+        const body = {
+            name: $(this).find("#name").val(),
+            ra: $(this).find("#ra").val(),
+            cpf: $(this).find("#cpf").val(),
+            email: event.target.email.value,
+        };
         
-    //     fetch("http://localhost:3000/students/save", {
-    //         method:"POST", 
-    //         body: JSON.stringify(body),
-    //     })
-    //     .then((response) => {
-    //         return response.json();
-    //     })
-    //     .then((data)=>{
-    //         console.log(data);
-    //     });
+        fetch("http://localhost:3000/students/save", {
+            method:"POST", 
+            body: JSON.stringify(body),
+            headers:{
+                Accept:'application/json',
+                "Content-Type":'application/json'
+            }
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data)=>{
+            alert(data.message);
+            document.location.href ="studentsList.html";
+            
+        });
         
 
-    // });
+    });
     
 });
 
