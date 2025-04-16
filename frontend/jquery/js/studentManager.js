@@ -1,12 +1,8 @@
 
 $(document).ready(function(){
 
-    const urlSearch = new URLSearchParams(window.location.search);
-
-    const ra = urlSearch.get("ra");
-
-    if(ra){
-        fetchStudent(ra);
+    if(isEditingMode()){
+        fetchStudent();
     }
     else{
         
@@ -24,31 +20,42 @@ $(document).ready(function(){
             cpf: $(this).find("#cpf").val(),
             email: event.target.email.value,
         };
-        
-        fetch("http://localhost:3000/students/save", {
-            method:"POST", 
-            body: JSON.stringify(body),
-            headers:{
-                Accept:'application/json',
-                "Content-Type":'application/json'
-            }
-        })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data)=>{
-            alert(data.message);
-            document.location.href ="studentsList.html";
-            
-        });
-        
+        let methodEndpoint;
+        let urlEndpoint;
 
+        if(isEditingMode()){
+            methodEndpoint = "PUT";
+            urlEndpoint = `http://localhost:3000/students/edit/${getRAFromUrl()}`;
+        }else{
+            methodEndpoint = "POST"
+            urlEndpoint = "http://localhost:3000/students/save"
+        }
+
+                fetch(urlEndpoint, {
+                    method:methodEndpoint , 
+                    body: JSON.stringify(body),
+                    headers:{
+                        Accept:'application/json',
+                        "Content-Type":'application/json'
+                    }
+                })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data)=>{
+                    alert(data.message);
+                    document.location.href ="studentsList.html";
+                    
+                });        
+        
     });
     
 });
 
-function fetchStudent (ra){
-        fetch(`http://localhost:3000/students/find/${ra}`)
+    function fetchStudent (ra)
+{
+
+        fetch(`http://localhost:3000/students/find/${getRAFromUrl()}`)
         .then(function(response){
             return response.json();
         }).then(function(data){
@@ -64,4 +71,16 @@ function fetchStudent (ra){
             $(".content-page").show('slow');
             $(".loader").hide("fast");
         })
-} 
+}
+
+function isEditingMode(){
+    const urlSearch = new URLSearchParams(window.location.search);
+
+    return urlSearch.has('ra');
+}
+
+function getRAFromUrl(){
+    const urlSearch = new URLSearchParams(window.location.search);
+    return urlSearch.get('ra');
+
+}
